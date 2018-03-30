@@ -29,7 +29,7 @@ Parameter|Type|is required|
 -|-|-
 text|string|required
 type|string|optional
-type|int|optional (default: 5000)
+lifetime|int|optional (default: 5000)
 
 ### Notification types
 The type of a notification is handled by a css class.
