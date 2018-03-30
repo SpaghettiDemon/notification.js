@@ -11,18 +11,24 @@
 	<script src="../js/notification.js"></script>
 
 	<script type="text/javascript">
-		window.addEventListener('load', function() {
+		window.addEventListener('load', function () {
 			var buShowDemo = document.getElementById('buShowDemoNotification');
+			var buShowDemoError = document.getElementById('buShowDemoErrorNotification');
 
-			buShowDemo.addEventListener('click', function() {
+			buShowDemo.addEventListener('click', function () {
 				new notification('test', null, 15000);
 			});
+
+			buShowDemoError.addEventListener('click', function () {
+				new notification('test', 'error', 15000);
+			})
 		});
 	</script>
 </head>
 
 <body>
 	<button id="buShowDemoNotification">Display a Notification</button>
+	<button id="buShowDemoErrorNotification">Display a Error Notification</button>
 </body>
 
 </html>

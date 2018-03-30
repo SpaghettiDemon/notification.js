@@ -23,6 +23,11 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+#notificationBox > .notification.error {
+  background-color: crimson;
+  color: white;
+}
+
 @keyframes notificationSpawn {
   0% {
     transform: translateX(100%) translateY(100%);
