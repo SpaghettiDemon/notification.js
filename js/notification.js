@@ -36,11 +36,21 @@ class notification {
     }
     this.html.innerHTML = this.text;
 
+    // - creating the lifetime indication bar
     var lifetimebar = document.createElement('div');
     lifetimebar.setAttribute('class', 'lifetimebar');
-    lifetimebar.style.animationDuration = this.lifetime + 'ms';
+    lifetimebar.style.animationDuration = this.lifetime + 'ms'; // apply the lifetime to the animationDuration so it ends when the notification gets killed
 
-    this.html.appendChild(lifetimebar);
+    this.html.appendChild(lifetimebar); // append the lifetimebar to the notification object
+
+    // - create a button to kill the notification before the lifetime runs out
+    var buCloseNotification = document.createElement('button');
+    buCloseNotification.setAttribute('class', 'buCloseNotification');
+    buCloseNotification.setAttribute('title', 'Close Notification');
+    buCloseNotification.innerHTML = '&#10006;';
+    buCloseNotification.addEventListener('click', this.kill.bind(this));
+
+    this.html.appendChild(buCloseNotification);
 
     // - append the DOM element to the notificationBox
     notificationBox.appendChild(this.html);
