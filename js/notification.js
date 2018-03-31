@@ -36,6 +36,12 @@ class notification {
     }
     this.html.innerHTML = this.text;
 
+    var lifetimebar = document.createElement('div');
+    lifetimebar.setAttribute('class', 'lifetimebar');
+    lifetimebar.style.animationDuration = this.lifetime + 'ms';
+
+    this.html.appendChild(lifetimebar);
+
     // - append the DOM element to the notificationBox
     notificationBox.appendChild(this.html);
 
